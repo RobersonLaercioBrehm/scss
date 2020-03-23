@@ -1,0 +1,46 @@
+/**
+ * Resets
+ */
+*,
+::after,
+::before {
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+	list-style: none;
+	border: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+}
+a {
+	text-decoration: none;
+	&:hover {
+		@extend a;
+	}
+}
+
+/**
+ * Demo
+ */
+body {
+	background: #dfdfdf;
+	text-align: justify;
+	color: #bbb;
+}
+.container {
+	background: #8fbdd9;
+}
+.grid {
+	background: #2a86bf;
+}
+.grid > div {
+	background: #265da6;
+}
+.grid .grid > div {
+	background: #104573;
+}

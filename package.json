@@ -2,5 +2,14 @@
   "name": "scss",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "gulp-jsbeautifier": "^3.0.1"
+  },
+  "scripts": {
+    "scss": "gulp"
+  }
 }

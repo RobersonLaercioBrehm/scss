@@ -1,0 +1,120 @@
+//Produção
+$cfg-production: false;
+
+//Fontes
+$cfg-font: (
+	'sans-serif': '"Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif',
+	'mono': 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+);
+
+//Cores
+$cfg-colors-select: 'light';
+$cfg-colors: (
+	'light': (
+		'primary': #007bff,
+		'secondary': #6c757d,
+		'success': #28a745,
+		'info': #17a2b8,
+		'warning': #ffc107,
+		'danger': #dc3545,
+		'light': #f8f9fa,
+		'dark': #343a40
+	),
+	'dark': (
+		'primary': #007bff,
+		'secondary': #6c757d,
+		'success': #28a745,
+		'info': #17a2b8,
+		'warning': #ffc107,
+		'danger': #dc3545,
+		'light': #f8f9fa,
+		'dark': #343a40
+	)
+);
+
+//Grid
+$cfg-grid: (
+	'cols': 12,
+	'rows': 3,
+	'gap': 5px
+);
+
+//Breakpoints
+$cfg-breakpoints: (
+	'xs': 0,
+	'sm': 576px,
+	'md': 768px,
+	'lg': 992px,
+	'xl': 1200px
+);
+
+//Sufixos para direção
+$cfg-sides: (
+	'': '',
+	'l': '-left',
+	'r': '-right',
+	't': '-top',
+	'b': '-bottom',
+	'x': (
+		'-left',
+		'-right'
+	),
+	'y': (
+		'-top',
+		'-bottom'
+	)
+);
+
+//Layout
+$cfg-layout: (
+	'nav': 200px,
+	'sidebar': 200px
+);
+
+//Sufixos para niveis
+$cfg-level: (
+	'0': 0px,
+	'1': 10px,
+	'2': 20px,
+	'3': 30px,
+	'4': 40px,
+	'5': 50px
+);
+
+@if($cfg-production == true){
+	/**
+	 * Configurações
+	 */
+	:root {
+		/* Fontes */
+		--font-sans-serif: #{map-get($cfg-font, 'sans-serif')};
+		--font-monospace: #{map-get($cfg-font, 'mono')};
+		/* Breakpoints */
+		--breakpoint-xs: #{map-get($cfg-breakpoints, 'xs')};
+		--breakpoint-sm: #{map-get($cfg-breakpoints, 'sm')};
+		--breakpoint-md: #{map-get($cfg-breakpoints, 'md')};
+		--breakpoint-lg: #{map-get($cfg-breakpoints, 'lg')};
+		--breakpoint-xl: #{map-get($cfg-breakpoints, 'xl')};
+		/* Estrutura */
+		--config-nav: #{map-get($cfg-layout, nav)};
+		--config-sidebar: #{map-get($cfg-layout, 'sidebar')};
+		/* Cores padrões */
+		@each $k, $v in map-get($cfg-colors, $cfg-colors-select) {
+			--#{$k}: #{$v};
+		}
+		/* Cores extras */
+		--blue: #007bff;
+		--indigo: #6610f2;
+		--purple: #6f42c1;
+		--pink: #e83e8c;
+		--red: #dc3545;
+		--orange: #fd7e14;
+		--yellow: #ffc107;
+		--green: #28a745;
+		--teal: #20c997;
+		--cyan: #17a2b8;
+		--white: #fff;
+		--gray: #6c757d;
+		--gray-dark: #343a40;
+	}
+}

@@ -1,0 +1,39 @@
+@import 'config.scss';
+/**
+ * Grid
+ */
+.container {
+	width: 900px;
+	margin: 0 auto;
+	padding: 0 map-get($cfg-grid, 'gap');
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(map-get($cfg-grid, 'cols'), 1fr);
+	gap: map-get($cfg-grid, 'gap') * 2;
+	align-items: stretch;
+	justify-items: stretch;
+	&.gap{
+		@for $i from 0 through 5 {
+			&-#{$i}{
+				gap: 5px * $i;
+				&-row{
+					column-gap: map-get($cfg-grid, 'gap') * $i;
+				}
+				&-col{
+					row-gap: map-get($cfg-grid, 'gap') * $i;
+				}
+			}
+		}
+	}
+}
+@for $i from 1 through map-get($cfg-grid, 'cols') {
+	.col-#{$i} {
+		grid-column: span $i;
+	}
+}
+@for $i from 1 through map-get($cfg-grid, 'rows') {
+	.row-#{$i} {
+		grid-row: span $i;
+	}
+}
