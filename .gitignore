@@ -1,0 +1,14 @@
+#geral
+**/.*
+**/_*
+**/*.lock
+node_modules/
+
+#arquivos
+!.gitignore
+!.babelrc
+*.log
+*_log
+!.htaccess
+config/
+upload/
